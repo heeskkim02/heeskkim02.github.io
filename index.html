@@ -1,21 +1,150 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>WebB01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      margin: 0;              /* 기본 여백 제거 */
+      min-height: 100vh;      /* 전체 뷰포트 높이 사용 */
+      display: flex;          /* flex container 로 설정 */
+      align-items: center;    /* 세로 가운데 */
+      justify-content: center;   /* 가로 가운데 */
+    }
+    .hero {                /* 뷰포트의 가로/세로 가운데 배치 */
+      display: flex;
+      align-items: center;           /* 세로 가운데  */
+      justify-content: center;       /* 가로 가운데  */
+      gap: 24px;
+    }
+    .title {
+      flex-basis: 30%;
+    }
+    .image {
+      flex-basis: 30%;
+    }
+    .menu_image {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #menu_image_text1 {
+        position: absolute;
+        font-size: 50px;
+        color: #333;
+        top: 0%;
+        left: 0%;
+        transform: translate(50%, 50%);
+        order: -1;
+    }
+    #menu_image_text2 {
+        position: absolute;
+        font-size: 50px;
+        color: #333;        
+        top: 0%;
+        left: 50%;
+        transform: translate(50%, 50%);
+        order: -1;
+    }
+    #menu_image_text3 {
+        position: absolute;
+        font-size: 50px;
+        color: #ccc;        
+        top: 50%;
+        left: 0%;
+        transform: translate(50%, 50%);
+        order: -1;
+    }
+    #menu_image_text4 {
+        position: absolute;
+        font-size: 50px;
+        color: #333;        
+        top: 50%;
+        left: 50%;
+        transform: translate(50%, 50%);
+        order: -1;
+    }            
+/* --------------------
+ 추가한 내용 
+---------------------- */
+    a { text-decoration: none; }
+    .round { 
+        border-radius: 50%; 
+        /* width: 80%;
+        height: 80%; */
+        /* box-shadow: 5px 5px 5px #000; */
+         /* box-shadow: 0 10px 20px rgba(0,0,0,0.2); */
+        filter: drop-shadow(5px 5px 5px #000);
+        transition: width 10s height 10s border 5s transform 5s;;
+    }
+    .round:hover {
+        transform: scale(1.1, 1.1);
+    }
+    .square {
+        object-fit: cover;
+        object-position: center; 
+        width: 200px;
+        height: 150px;
+
+    }
+    .square:hover {
+        transform: scale(1.2, 1.2);
+    }
+.container { display: flex; flex-direction: column; height: 100%;}
+.hero { justify-content: center; align-items: center;}
+article { flex: 1;}        
+/* =============================
+모바일:  (세로 스택 + 순서 변경)
+=============================== */    
+@media (max-width: 600px) {
+    .hero {
+        flex-direction: column;     /* 세로 쌓기 */
+        text-align: center;         /* 텍스트 가운데 */
+    }
+    .image {
+        order: -1;   /* 이미지가 위로 올라오게 */
+    }
+}    
+</style>    
 </head>
 <body>
-    <h1>웹프로그래밍기초</h1>
-    <h3>
-        미션
-    </h3>
-    <ul>
-        <li> 1주차(자기소개)
-            <li><a href="./w01-profile/profile.html">[w01-profile></a></li>
-        </li>
-        <li> 2주차(햄버거) (stu)
-            <li><a href="./w02-image/mission/w02-홍길동_20269999-ans.html">[w02-burger-stu></a></li>
-        </li>        
-    </ul>
+    <div class="container">
+        <section class="hero">
+            <div class="title">
+                <h1>웹프로그래밍기초</h1>
+                <h3>기말 프로젝트</h3>
+                <p>1학년 Y3반 홍길동</p>
+            </div>
+            <div class="image">
+                <a href="./mission/mission05/m05-fruitFarm-02-01.html"><img class="round" src="./img/img-flower-whiteRoyalAzalea.jpg" alt="홈" width="300"></a>
+            </div>
+            <div class="menu_image">
+                <a href="./mission/mission01/profile.html">
+                    <p id="menu_image_text1" >미션1</p>
+                    <img class="square" src="./img/greenery_img-01.jpg" alt="미션" width="200">
+                </a>
+                <a href="./mission/mission02/w02-홍길동_20269999-ans.html">
+                    <p id="menu_image_text2" >미션2</p>
+                    <img class="square" src="./img/greenery_img-02.jpg" alt="미션" width="200">
+                </a>
+                <a href="./mission/mission03/m03-wedding-ans.html">
+                    <p id="menu_image_text3" >미션3</p>
+                    <img class="square" src="./img/greenery_img-03.jpg" alt="미션" width="200">
+                </a>
+                <a href="./mission/mission04/m04-coffee_index.html">
+                    <p id="menu_image_text4" >미션4</p>
+                    <img class="square" src="./img/greenery_img-04.jpg" alt="미션" width="200">
+                </a>                                    
+            </div>
+        </section>
+        <article> 
+        </article>
+        <footer>
+            <p><small>&copy 2026 기말프로젝트 에제</small></p>
+        </footer>  
+    </div>
 </body>
 </html>

@@ -1,0 +1,93 @@
+<!-- m04-coffee_index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>시맨틱 구조</title>
+  <style>
+    .mainArea { background-color: yellow; }
+    .mainArea h1 { color: red; }
+    .mainArea p.first { color: green; }
+    .mainArea p.second { color: blue; }
+
+    .formArea { background-color: #ddeedd; }
+
+    footer {
+      background: #949087;
+      text-align: center;
+      padding: 0.5rem;
+    }
+  </style>
+  <title>시맨틱 구조</title>
+</head>
+<body>
+  <header>
+    <h1>구조화 문서</h1>
+  </header>
+  <main>
+    <section class="mainArea">
+      <h2>Welcome to Web Coffee!</h2>
+      <img src="./img/coffee.gif" alt="커피메이커">
+      <p class="first">하우스 로스팅 원두의 신선한 커피를 맛보고 싶다면 
+    공인 1급 바리스타가 최고급 원두만을 직접 엄선하여 사용합니다.</p>
+      <h3>메뉴</h3>
+      <p class="second">아메리카노, 카페라떼, 카푸치노, 카페모카, ...</p>
+    </section>
+
+    <section class="menuArea">
+      <h2>메뉴</h2>
+      <ul>
+        <li>아메리카노<br>
+          <img src="img/americano.jpg">
+          에스프레소에 물을 넣어 연하게 마시는 커피
+        </li>
+        <li>카페라떼<br>
+          <img src="img/cafelatte.jpg">
+          에스프레소(Caffe)와 우유(Latte)를 넣은 커피
+        </li>
+        <li>카푸치노<br>
+          <img src="img/cappuccino.jpg">
+          우유를 섞은 커피에 계핏가루를 뿌린 이탈리아식 커피
+        </li>
+      </ul>
+    </section>
+
+    <section class="formArea">
+      <h2>커피 주문</h2>
+      <form action="#" method="POST">
+        <p>
+          닉네임: <input type="text" name="nickname"><br>
+          암호: <input type="password" name="pw"><br>
+        </p>
+        <hr>    
+        <h3>커피 주문(원하는 것을 선택하세요)</h3>
+        <p>
+          <select name="select_type">
+            <option value="c1_americano">아메리카노</option>          
+            <option value="c2_cafelatte">카페라떼</option>
+            <option value="c3_cappuccino">카푸치노</option>
+          </select>
+        </p><br><br>
+        <p>
+          <label><input type="radio" name="hot_yn" value="hot" checked>핫(HOT)</label>
+          <label><input type="radio" name="hot_yn" value="ice">아이스(ICE)</label>
+        </p>   
+        <p>
+          추가 주문(원하는 것을 선택하세요)<br>
+          <label><input type="checkbox" name="add_type" value="add_decaffein">디카페인</label>        
+          <label><input type="checkbox" name="add_type" value="add_shots">샷 추가</label>
+          <label><input type="checkbox" name="add_type" value="add_syrup">시럽 추가</label>
+          <label><input type="checkbox" name="add_type" value="add_cinnamon">시나몬 추가</label>
+        </p>            
+        비고: <textarea name="message"></textarea><br>
+        <input type="submit" value="주문">
+        <input type="reset" value="취소"><br>
+      </form>
+    </section>    
+  </main>
+  
+  <footer>
+    <p><small>&copy; 시맨틱 태그 연습</small></p>
+  </footer>
+</body>
+</html>
